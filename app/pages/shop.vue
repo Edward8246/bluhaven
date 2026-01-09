@@ -1,6 +1,6 @@
 <template>
   <layout :transparent="true">
-    <breadcrumb-area title="商品" subtitle="商品"/>
+    <breadcrumb-area title="商城" subtitle="商城"/>
     <shop-area/>
   </layout>
 </template>
@@ -19,7 +19,7 @@ export default defineComponent({
   },
   setup() {
     useHead({
-      title: "商品",
+      title: "商城",
     });
   },
 });

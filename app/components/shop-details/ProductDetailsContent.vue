@@ -43,7 +43,7 @@
               <!-- <div class="product__modal-required mb-5">
                   <span >Repuired Fiields *</span>
               </div> -->
-              <div class="pro-quan-area d-lg-flex align-items-center">
+              <!-- <div class="pro-quan-area d-lg-flex align-items-center">
                   <div class="product-quantity-title">
                       <label>數量</label>
                   </div>
@@ -58,7 +58,27 @@
                       <a @click.prevent="state.add_cart_product(item)" href="#" 
                       class="os-btn os-btn-black os-btn-3 mr-10">加入購物車</a>
                   </div>
-              </div>
+              </div> -->
+
+                <div class="pro-quan-area d-flex flex-wrap align-items-center">
+                    <div class="product-quantity-title mb-10 mb-sm-0">
+                        <label>數量</label>
+                    </div>
+                    
+                    <div class="product-quantity mb-15 mb-sm-0">
+                      <div class="cart-plus-minus">
+                        <input type="text" v-model="state.orderQuantity">
+                          <div @click="state.orderQuantity > 1 ? state.orderQuantity-- : state.orderQuantity = 1" class="dec qtybutton">-</div>
+                          <div @click="state.orderQuantity++" class="inc qtybutton">+</div>
+                      </div>
+                    </div>
+
+                    <div class="pro-cart-btn ml-sm-20">
+                        <a @click.prevent="state.add_cart_product(item)" href="#" 
+                        class="os-btn os-btn-black os-btn-3">加入購物車</a>
+                    </div>
+                </div>
+
           </form>
       </div>
   </div>
@@ -88,3 +108,19 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped>
+.pro-quan-area {
+  gap: 15px; /* 使用 gap 可以更優雅地處理手機版的元件間距 */
+}
+
+@media (max-width: 576px) {
+  .pro-cart-btn {
+    width: 100%; /* 手機版如果想要按鈕滿版更好按，可以加這行 */
+  }
+  .os-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>

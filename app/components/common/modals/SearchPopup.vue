@@ -10,7 +10,7 @@
         <div class="col-xl-12">
           <div class="header__search-inner text-center">
             <!--
-              ✅ 為什麼不用 <form action="#">？
+             不用 <form action="#">？
               因為 action="#" 會真的送出、刷新頁面（不符合 SPA / Nuxt 的體驗）
               所以我們用 @submit.prevent 攔截 submit：
               - prevent = 阻止預設行為（避免刷新）
@@ -33,25 +33,6 @@
                 <h3>搜尋</h3>
               </div>
 
-              <!--
-                有需要分類再加（目前先不做）
-                未來如果要做「分類 + 關鍵字搜尋」，可以把這段打開，
-                並在 onSubmit() 把分類也一起帶到 query，例如：
-                /shop?search=xxx&category=Chair
-
-                ✅ 這段目前保留註解，是因為你說「先專心做作品集」，
-                不要出現假分類或沒資料來源的功能，避免面試被問爆。
-              -->
-              <!-- <div class="header__search-categories">
-                <ul class="search-category">
-                  <li><nuxt-link href="/shop">全部分類</nuxt-link></li>
-                  <li><nuxt-link href="/shop">配件</nuxt-link></li>
-                  <li><nuxt-link href="/shop">椅子</nuxt-link></li>
-                  <li><nuxt-link href="/shop">平板</nuxt-link></li>
-                  <li><nuxt-link href="/shop">男裝</nuxt-link></li>
-                  <li><nuxt-link href="/shop">女裝</nuxt-link></li>
-                </ul>
-              </div> -->
 
               <div class="header__search-input p-relative">
                 <!--
@@ -167,3 +148,25 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+/* 1. 核心解決方案：強制 16px 防止 iOS 自動放大 */
+.header__search-input input {
+  font-size: 16px !important;
+}
+
+/* 2. 修正 Placeholder 字體大小（選配，維持美觀） */
+.header__search-input input::placeholder {
+  font-size: 16px;
+}
+
+/* 3. 電腦版還原為你原本想要的較小字體 */
+@media (min-width: 768px) {
+  .header__search-input input {
+    font-size: 14px !important; /* 假設你原本是 14px */
+  }
+  .header__search-input input::placeholder {
+    font-size: 14px;
+  }
+}
+</style>

@@ -74,7 +74,7 @@
             <!-- 商品內容（Grid / List） -->
             <div class="tab-content" id="pills-tabContent">
               <!--
-                ✅ 沒搜尋結果時的提示（面試作品很加分）
+                 沒搜尋結果時的提示
                 - filterProducts 為空就顯示
                 - 提示使用者可換關鍵字或 Reset
               -->
@@ -224,11 +224,10 @@ export default defineComponent({
         // 呼叫 store 的搜尋（你已在 useProducts.ts 加的 handleSearch）
         store.handleSearch(keyword || "");
 
-        // ✅ 當搜尋條件改變時，回到第一頁比較合理
+        // 當搜尋條件改變時，回到第一頁比較合理
         // 不然你可能在第 3 頁搜尋，結果只有 1 頁會看不到商品
         // 這裡在 setup 內無法直接改 data() 的 pageStart，
         // 所以簡單做法：讓 Pagination 元件在 items 變化時自行處理
-        // （如果你希望更嚴謹，我可以再帶你把 pageStart 重設為 0）
       },
       { immediate: true }
     );
