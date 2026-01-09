@@ -31,7 +31,7 @@ export default defineComponent({
   },
   setup() {
     useHead({
-      title: "Home Main - Outstock Clean, Minimal eCommerce Vue Nuxt 3 Template",
+      title: "Bluhaven Living",
     });
   },
 });
