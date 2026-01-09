@@ -56,7 +56,7 @@
                   </div>
                   <div class="pro-cart-btn ml-20">
                       <a @click.prevent="state.add_cart_product(item)" href="#" 
-                      class="os-btn os-btn-black os-btn-3 mr-10">+ ㄈ</a>
+                      class="os-btn os-btn-black os-btn-3 mr-10">加入購物車</a>
                   </div>
               </div>
           </form>
