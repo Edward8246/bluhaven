@@ -15,28 +15,28 @@ export default {
     return {
       social_links: [
         {
-          link: "http://facebook.com",
+          link: "https://www.facebook.com",
           target: "_blank",
           icon: "fab fa-facebook-f",
           name: "Facebook",
         },
         {
-          link: "http://twitter.com",
+          link: "https://www.instagram.com",
           target: "_blank",
-          icon: "fab fa-twitter",
-          name: "Twitter",
+          icon: "fab fa-instagram",
+          name: "Instagram",
         },
         {
-          link: "https://www.behance.net/",
+          link: "https://www.tiktok.com",
           target: "_blank",
-          icon: "fab fa-behance",
-          name: "Behance",
+          icon: "fab fa-tiktok",
+          name: "TikTok",
         },
         {
-          link: "https://dribbble.com/",
+          link: "https://www.youtube.com",
           target: "_blank",
-          icon: "fab fa-dribbble",
-          name: "Dribbble",
+          icon: "fab fa-youtube",
+          name: "YouTube",
         },
       ],
     };
