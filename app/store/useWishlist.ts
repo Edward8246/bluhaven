@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import {type ProductType} from '~/types/productType';
+import { type ProductType } from '~/types/productType';
 
 export const useWishlistStore = defineStore('wishlist', {
   state: () => ({
@@ -7,37 +7,36 @@ export const useWishlistStore = defineStore('wishlist', {
   }),
   actions: {
     add_wishlist_product(payload: ProductType) {
-      const isAdded = this.wishlists.findIndex(p => p.id === payload.id)
-      if(isAdded !== -1){
-        this.wishlists = this.wishlists.filter(p => p.id !== payload.id)
-        useNuxtApp().$toast.error(`${payload.title} remove to wishlist`);
-      }
-      else {
-        this.wishlists.push(payload)
-        useNuxtApp().$toast.success(`${payload.title} added to wishlist`);
+      const isAdded = this.wishlists.findIndex((p) => p.id === payload.id);
+      if (isAdded !== -1) {
+        this.wishlists = this.wishlists.filter((p) => p.id !== payload.id);
+        useNuxtApp().$toast.error(`已將「${payload.title}」從願望清單移除`);
+      } else {
+        this.wishlists.push(payload);
+        useNuxtApp().$toast.success(`已將「${payload.title}」加入願望清單`);
       }
       localStorage.setItem('wishlist_products', JSON.stringify(this.wishlists));
     },
-    removeWishlist(payload: ProductType){
-      this.wishlists = this.wishlists.filter(p => p.id !== payload.id)
-      useNuxtApp().$toast.error(`${payload.title} remove to wishlist`);
+
+    removeWishlist(payload: ProductType) {
+      this.wishlists = this.wishlists.filter((p) => p.id !== payload.id);
+      useNuxtApp().$toast.error(`已將「${payload.title}」從願望清單移除`);
       localStorage.setItem('wishlist_products', JSON.stringify(this.wishlists));
-    }
+    },
   },
   getters: {
-    get_wishlist_products:(state) => {
+    get_wishlist_products: (state) => {
       if (process.client) {
         const data = localStorage.getItem('wishlist_products');
         if (data) {
-          return state.wishlists = JSON.parse(data);
+          return (state.wishlists = JSON.parse(data));
         } else {
           localStorage.setItem('wishlist_products', JSON.stringify([]));
-          return state.wishlists = [];
+          return (state.wishlists = []);
         }
       } else {
         return state.wishlists;
       }
-    }
-  }
-
-})
+    },
+  },
+});
