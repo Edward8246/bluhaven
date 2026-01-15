@@ -7,6 +7,7 @@
   </div>
 </template>
 
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import Header from "./headers/Header.vue";
