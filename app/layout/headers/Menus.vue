@@ -46,18 +46,15 @@
 import { defineComponent } from "vue";
 import menuData from "~/mixins/menuData";
 
+//  assets：這裡直接 import，
+import bg from "~/assets/img/bg/mega-menu-bg.jpg";
+
 export default defineComponent({
   mixins: [menuData],
   data() {
     return {
-      /**
-       * ✅ 改重點：public 的圖片不要 import，直接用字串路徑
-       * 對應檔案位置：public/img/bg/mega-menu-bg.jpg
-       * 使用時寫：/img/bg/mega-menu-bg.jpg
-       */
-      bg: "/img/bg/mega-menu-bg.jpg",
+      bg,
     };
   },
-  setup() {},
 });
 </script>

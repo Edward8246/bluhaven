@@ -12,13 +12,7 @@
           立即購物
         </nuxt-link>
       </div>
-
-      <!-- ✅（改動 3）原本「有商品」時沒有留白：因為你註解掉 coupon-area 後，上方間距消失
-           解决：用外層 section 統一補回 pt-100 pb-100，讓 checkout-area 不會貼頂 -->
       <section v-else class="checkout-page pt-100 pb-100">
-        <!-- ✅（改動 4）coupon-area 先保留註解（不刪檔案、不影響現在）
-             重點是：留白改由外層 section 負責 -->
-        <!-- <coupon-area /> -->
 
         <!-- 原本就有：結帳主內容 -->
         <checkout-area />
@@ -46,7 +40,6 @@ export default defineComponent({
   setup() {
     const state = useCartStore();
 
-    // ✅（改動 5）頁籤標題中文化（不影響功能）
     useHead({
       title: "結帳",
     });

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-// ✅ 不再直接載入假資料
+//  不再直接載入模擬資料
 // import productData from "~/data/productData";
 import { type ProductType } from "~/types/productType";
 
@@ -101,7 +101,7 @@ export const useProductsStore = defineStore("products", {
 
     /**
      * 商品名稱搜尋（包含式搜尋）
-     * ✅ 注意：這些篩選/搜尋都只用 this.products（原始資料）來做
+     * 注意：這些篩選/搜尋都只用 this.products（原始資料）來做
      * - 不會破壞原始資料
      * - 只更新 filterProducts（畫面顯示用）
      */

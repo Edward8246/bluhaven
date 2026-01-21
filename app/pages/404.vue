@@ -10,12 +10,12 @@
               <h1>404</h1>
             </div>
             <span>not found</span>
-            <h2>Nothing To See Here!</h2>
+            <h2>沒有畫面出現錯誤</h2>
             <p>
               The page are looking for has been moved or doesn’t exist anymore,
               if you like you can return to our homepage. If the problem
               persists, please send us an email to
-              <span class="highlight comment">basictheme400@gmail.com</span>
+              <span class="highlight comment">BluHavan@gmail.com</span>
             </p>
 
             <div class="error__search">

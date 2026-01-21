@@ -72,7 +72,7 @@
             刪除（移除）按鈕
             - 點擊後呼叫 store.remover_cart_products(item)
             - 原本模板用 href="#"，點了可能讓頁面跳到頂部
-              所以我補上 @click.prevent，避免預設行為
+              所以補上 @click.prevent，避免預設行為
           -->
           <div class="del-icon f-right mt-30" @click="store.remover_cart_products(item)">
             <a href="#" @click.prevent aria-label="從購物車移除商品">
