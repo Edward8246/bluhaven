@@ -58,11 +58,9 @@ export default defineComponent({
 
 <style scoped>
 /*
-  ✅（改動 3 補充說明）
-  checkout-page 主要是語意化（方便你未來針對結帳頁做微調），
-  目前留白主要靠 pt-100 pb-100（Bootstrap 的 utility class）來達成。
+  checkout-page （未來針對結帳頁做微調），
 */
-.checkout-page {
-  /* 先留空，避免你之後要調整時找不到入口 */
-}
+/* .checkout-page {
+  
+} */
 </style>

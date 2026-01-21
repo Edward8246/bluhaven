@@ -22,10 +22,11 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <div class="product__big-image effectThree mb-40">
-                            <nuxt-link :href="`/product-details/${big_prd_1.id}`">
-                              <img :src="big_prd_1.big_img" alt="">
-                            </nuxt-link>
+                        <!-- 多了 v-if="big_prd_1"「只有 big_prd_1 真的存在時，才渲染這段 HTML。」 -->
+                        <div class="product__big-image effectThree mb-40" v-if="big_prd_1">
+                        <nuxt-link :href="`/product-details/${big_prd_1.id}`">
+                            <img :src="big_prd_1.big_img" alt="">
+                        </nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -33,10 +34,12 @@
             <div class="col-lg-6 col-lg-6">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="product__big-image effectThree mb-40">
-                            <nuxt-link :href="`/product-details/${big_prd_2.id}`">
-                              <img :src="big_prd_2.big_img" alt="product img">
-                            </nuxt-link>
+
+
+                       <div class="product__big-image effectThree mb-40" v-if="big_prd_2">
+                        <nuxt-link :href="`/product-details/${big_prd_2.id}`">
+                            <img :src="big_prd_2.big_img" alt="product img">
+                        </nuxt-link>
                         </div>
                     </div>
                     <div class="col-lg-12">
