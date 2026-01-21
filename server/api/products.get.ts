@@ -1,22 +1,12 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
-
-// 也可以不寫這行 import，Nuxt server route 其實會自動有 defineEventHandler
 import { defineEventHandler } from "h3";
 
-export default defineEventHandler(async () => {
+// ✅ 讓 Vite/Nitro 在 build 時把 JSON 打包進去（Vercel 穩）
+import productsJson from "./data/products.json";
 
-  const filePath = join(process.cwd(), "server", "api", "data", "products.json");
-  const raw = await readFile(filePath, "utf-8");
-
-  //  JSON 目前長這樣：{ "products": [...] }
-  const json = JSON.parse(raw);
-
-  /**
-   *  回傳「純陣列」給前端 store
-   * 這樣 Pinia store：$fetch<ProductType[]>("/api/products") 才會完全對齊
-   */
-  return json.products ?? [];
+export default defineEventHandler(() => {
+  // 你的 JSON 結構是 { "products": [...] }
+  // ✅ 回傳純陣列
+  return (productsJson as any).products ?? [];
 });
 
 
