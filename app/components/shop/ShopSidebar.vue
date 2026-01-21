@@ -17,7 +17,7 @@
     <!-- product color end -->
 
     <!-- product brand start -->
-    <product-brands />
+    <!-- <product-brands /> -->
     <!-- product brand end -->
 
     <!-- reset button start -->
