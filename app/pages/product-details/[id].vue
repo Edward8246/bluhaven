@@ -2,7 +2,7 @@
   <layout :transparent="true">
     <breadcrumb-area title="商品詳情" subtitle="商品詳情" />
 
-    <!-- ✅ item 存在才渲染，避免 item.details undefined -->
+    <!--  item 存在才渲染，避免 item.details undefined -->
     <shop-details-area v-if="item" :item="item" />
 
     <!-- 可選：載入中 / 找不到 -->
@@ -30,7 +30,7 @@ export default defineComponent({
     const route = useRoute();
 
     /**
-     * ✅ 這行就是「頁面在哪裡觸發 fetch」：
+     * 「頁面觸發 fetch」：
      * - 進入商品詳情頁時
      * - 重刷商品詳情頁時
      * - store 有 loaded 快取，所以只會打一次 API
